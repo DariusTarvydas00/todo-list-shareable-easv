@@ -23,7 +23,7 @@ pipeline {
                 }
                 stage("Build Front-End"){
                     steps {
-                        sh "docker-compose --env-file config/test.env build web"
+                       // sh "docker-compose --env-file config/test.env build web"
                     }
                 }
             }
@@ -53,12 +53,13 @@ pipeline {
             steps{
                 script {
                     try {
-                        sh "docker-compose --env-file config/test.env down"
+                    echo 'asd'
+                      //  sh "docker-compose --env-file config/test.env down"
                     }
                     finally {
                     }
                 }
-                    sh "docker-compose --env-file config/test.env up -d"
+                   // sh "docker-compose --env-file config/test.env up -d"
             }
         }
         stage("Delivery to registry"){
