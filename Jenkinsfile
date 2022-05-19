@@ -21,6 +21,7 @@ pipeline {
                    // dir('todo-list-shareable-easv-backend'){
                   //  sh "docker-compose down -v"
                                          //   sh "docker-compose build"
+
                                             sh "docker-compose up -d"
                    // }
 
