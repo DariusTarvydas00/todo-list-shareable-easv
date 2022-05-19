@@ -1,7 +1,24 @@
-FROM node:latest
+#FROM node:latest
+#WORKDIR /app
+#COPY package*.json ./
+#RUN npm install
+#COPY . .
+#RUN npm run build
+#CMD ["node", "dist/main"]
+# Image source
+FROM node:10-alpine
+
+# Docker working directory
 WORKDIR /app
-COPY package*.json ./app/
+
+# Copying file into APP directory of docker
+COPY ./package.json ./package-lock.json /app/
+
+# Then install the NPM module
 RUN npm install
-COPY . .
-RUN npm run build
-CMD ["node", "dist/main"]
+
+# Copy current directory to APP folder
+COPY . /app/
+
+EXPOSE 3000
+CMD ["npm", "run", "start:dev"]
