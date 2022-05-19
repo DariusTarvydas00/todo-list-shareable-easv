@@ -1,7 +1,7 @@
 version: '3'
 services:
   api:
-#    image: easv/nestjs-dockerized
+    image: nestjs
     build:
       dockerfile: todo-list-shareable-easv-backend/Dockerfile
       context: .
@@ -25,7 +25,7 @@ services:
       - POSTGRES_DB=${DB_NAME}
     container_name: postgres-dbs
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - ./pgdata:/var/lib/postgresql/data1
 #  db:
 #    image: postgres
 #    restart: always
