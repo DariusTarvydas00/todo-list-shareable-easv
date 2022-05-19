@@ -18,11 +18,13 @@ pipeline {
             parallel {
                 stage("Build Back-End"){
                     steps {
-                    dir('todo-list-shareable-easv-backend')
+                    dir('todo-list-shareable-easv-backend'){
                     sh "docker-compose down -v"
-                        sh "docker-compose build"
-                        sh "docker-compose run nestjs npm run typeorm:generate AnyNameYouLike"
-                        sh "docker-compose up"
+                                            sh "docker-compose build"
+                                            sh "docker-compose run nestjs npm run typeorm:generate AnyNameYouLike"
+                                            sh "docker-compose up"
+                    }
+
                     }
                 }
                 stage("Build Front-End"){
