@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
     volumes:
-      - .:/app
+      - .:/app/tos
       - /app/node_modules
   pgadmin:
     image: dpage/pgadmin4
