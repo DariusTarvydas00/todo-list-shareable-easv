@@ -25,7 +25,7 @@ services:
       - POSTGRES_DB=${DB_NAME}
     container_name: postgres-dbs
     volumes:
-      - ./pgdata:/var/lib/postgresql/data1
+      - ./pgdata:/var/lib/postgresql/data
 #  db:
 #    image: postgres
 #    restart: always
