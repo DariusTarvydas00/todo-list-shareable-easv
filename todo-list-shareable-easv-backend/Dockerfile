@@ -1,7 +1,7 @@
 FROM node:latest
 WORKDIR /app
-COPY package*.json ./
+COPY ./package*.json ./app/
 RUN npm install
-COPY . .
-RUN npm run build
-CMD ["node", "dist/main"]
+COPY . /app/
+EXPOSE 3000
+CMD ["npm", "run", "start:dev"]
