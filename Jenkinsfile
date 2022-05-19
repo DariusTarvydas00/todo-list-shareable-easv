@@ -19,6 +19,7 @@ pipeline {
                 stage("Build Back-End"){
                     steps {
                         sh "docker-compose build"
+                        sh "docker-compose up"
                     }
                 }
                 stage("Build Front-End"){
