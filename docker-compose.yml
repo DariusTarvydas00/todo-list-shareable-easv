@@ -12,8 +12,8 @@ services:
       - ./pgdata:/var/lib/postgresql/data
   nestjs:
     build:
-      context: todo-list-shareable-easv-backend
-      dockerfile: todo-list-shareable-easv-backend/Dockerfile
+      context: .
+      dockerfile: Dockerfile
     image: tusharchy/nest-and-postgres-application:latest
     environment:
       - DB_TYPE=${DB_TYPE}
