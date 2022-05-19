@@ -13,7 +13,7 @@ services:
   nestjs:
     build: 
       context: todo-list-shareable-easv-backend
-      dockerfile: todo-list-shareable-backend/Dockerfile
+      dockerfile: todo-list-shareable-easv-backend/Dockerfile
     image: tusharchy/nest-and-postgres-application:latest
     environment: 
       - DB_TYPE=${DB_TYPE}
