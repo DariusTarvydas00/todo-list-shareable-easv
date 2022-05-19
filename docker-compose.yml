@@ -15,17 +15,10 @@ services:
       - postgres
 
   postgres:
-    image: postgres:latest
-    ports:
-      - "8081:5432"
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: db
-
-  db:
     image: postgres
     restart: always
+    ports:
+      - "5432:5432"
     environment:
       - POSTGRES_USER=${DATABASE_USER}
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
@@ -33,6 +26,16 @@ services:
     container_name: postgres-db
     volumes:
       - ./pgdata:/var/lib/postgresql/data
+#  db:
+#    image: postgres
+#    restart: always
+#    environment:
+#      - POSTGRES_USER=${DATABASE_USER}
+#      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+#      - POSTGRES_DB=${DB_NAME}
+#    container_name: postgres-db
+#    volumes:
+#      - ./pgdata:/var/lib/postgresql/data
 #  nestjs:
 #    build:
 #      context: todo-list-shareable-easv-backend
