@@ -18,7 +18,7 @@ pipeline {
             parallel {
                 stage("Build Back-End"){
                     steps {
-                        sh "docker-compose --env-file config/test.env build api"
+                        sh "docker-compose build"
                     }
                 }
                 stage("Build Front-End"){
