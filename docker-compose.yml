@@ -12,7 +12,7 @@ services:
       - ./pgdata:/var/lib/postgresql/data
   nestjs:
     build:
-      context: .
+      context: todo-list-shareable-easv-backend
       dockerfile: todo-list-shareable-easv-backend/Dockerfile
     image: tusharchy/nest-and-postgres-application:latest
     environment:
