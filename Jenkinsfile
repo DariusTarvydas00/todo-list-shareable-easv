@@ -19,6 +19,7 @@ pipeline {
                 stage("Build Back-End"){
                     steps {
                         sh "docker-compose build"
+                        sh "docker-compose run nestjs npm run typeorm:generate AnyNameYouLike"
                         sh "docker-compose up"
                     }
                 }
