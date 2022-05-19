@@ -6,19 +6,21 @@
 #RUN npm run build
 #CMD ["node", "dist/main"]
 # Image source
-FROM node:10-alpine
+FROM node:latest
 
 # Docker working directory
-WORKDIR /app
+WORKDIR /nestjs/src/app
 
 # Copying file into APP directory of docker
-COPY ./package.json ./package-lock.json /app/
+COPY ./package*.json ./
 
 # Then install the NPM module
 RUN npm install
 
 # Copy current directory to APP folder
-COPY . /app/
+COPY . .
+
+RUN npm run build
 
 EXPOSE 3000
-CMD ["npm", "run", "start:dev"]
+CMD ["node", "dist/main"]

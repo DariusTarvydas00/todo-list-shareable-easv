@@ -1,5 +1,28 @@
 version: '3'
-services: 
+services:
+  api:
+#    image: easv/nestjs-dockerized
+    build:
+      dockerfile: todo-list-shareable-easv-backend/Dockerfile
+      context: .
+    environment:
+      DATABSE_URL: postgress://user:password@postgress:5432
+      NODE_ENV: development
+      PORT: 3000
+    ports:
+      - "8080:3000"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    ports:
+      - "8081:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db
+
   db:
     image: postgres
     restart: always
@@ -7,14 +30,13 @@ services:
       - POSTGRES_USER=${DATABASE_USER}
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
-      - POSTGRES_HOST_AUTH_METHOD=trust
     container_name: postgres-db
     volumes:
       - ./pgdata:/var/lib/postgresql/data
   nestjs:
     build: 
-      context: .
-      dockerfile: Dockerfile
+      context: todo-list-shareable-easv-backend
+      dockerfile: todo-list-shareable-easv-backend/Dockerfile
     image: tusharchy/nest-and-postgres-application:latest
     environment: 
       - DB_TYPE=${DB_TYPE}
