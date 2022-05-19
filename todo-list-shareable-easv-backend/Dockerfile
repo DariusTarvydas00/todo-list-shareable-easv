@@ -9,7 +9,7 @@
 FROM node:latest
 
 # Docker working directory
-WORKDIR /nestjs/src/app
+WORKDIR /app
 
 # Copying file into APP directory of docker
 COPY ./package*.json ./
