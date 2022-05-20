@@ -18,11 +18,11 @@ pipeline {
             parallel {
                 stage("Build Back-End"){
                     steps {
-                   // dir('todo-list-shareable-easv-backend'){
+                    dir('devops'){
                   //  sh "docker-compose down -v"
                                          //   sh "docker-compose build"
-sh "devops/docker-compose down "
-                                            sh "devops/docker-compose up -d"
+sh "docker-compose down "
+                                            sh "docker-compose up -d"
                    // }
 
                     }
