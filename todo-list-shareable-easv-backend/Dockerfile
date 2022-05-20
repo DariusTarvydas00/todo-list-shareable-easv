@@ -7,7 +7,7 @@
 #CMD ["node", "dist/main"]
 # Image source
 FROM node:latest
-RUN mkdit /opt/test
+RUN mkdir /opt/test
 # Docker working directory
 #WORKDIR /app
 #
