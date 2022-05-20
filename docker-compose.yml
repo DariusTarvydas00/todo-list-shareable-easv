@@ -14,7 +14,7 @@ services:
     image: my_image
     container_name: todo-nestjs
     build:
-      context: .
+      context: todo-list-shareable-easv-frontend
       dockerfile: Dockerfile
 #    environment:
 #      - DB_TYPE=${DB_TYPE}
