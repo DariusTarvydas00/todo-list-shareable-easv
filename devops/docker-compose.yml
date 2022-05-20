@@ -29,8 +29,8 @@ services:
     ports:
       - "3000:3000" # expose-to-the-world : only-in-the-docker
     container_name: todo-list-shareable-easv-backend
-    depends_on:
-      - db
+#    depends_on:
+#      - db
     volumes:
       - .:/app/tos
       - /app/node_modules
