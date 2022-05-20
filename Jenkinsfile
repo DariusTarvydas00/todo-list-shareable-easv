@@ -18,12 +18,10 @@ pipeline {
             parallel {
                 stage("Build Back-End"){
                     steps {
-                    dir('devops'){
                   //  sh "docker-compose down -v"
                                          //   sh "docker-compose build"
 sh "docker-compose down "
                                             sh "docker-compose up --build -d"
-                    }
 
                     }
                 }

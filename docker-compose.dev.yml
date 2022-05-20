@@ -3,6 +3,6 @@ services:
   nestjs:
     image: node:latest
     build:
-      context: ../todo-list-shareable-easv-backend
-      dockerfile: Dockerfile
+      context: todo-list-shareable-easv-backend
+      dockerfile: todo-list-shareable-easv-backend/Dockerfile
     container_name: todo-list-shareable-easv-backend
