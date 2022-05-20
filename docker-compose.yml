@@ -14,7 +14,7 @@ services:
     container_name: todo-nestjs
     build:
       context: todo-list-shareable-easv-backend
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
 #    environment:
 #      - DB_TYPE=${DB_TYPE}
 #      - POSTGRES_HOST=${POSTGRES_HOST}
