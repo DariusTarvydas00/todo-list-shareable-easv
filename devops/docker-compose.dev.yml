@@ -5,3 +5,4 @@ services:
     build:
       context: ../todo-list-shareable-easv-backend
       dockerfile: Dockerfile
+    container_name: todo-list-shareable-easv-backend
