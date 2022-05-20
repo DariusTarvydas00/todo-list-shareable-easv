@@ -11,10 +11,11 @@ services:
 #    volumes:
 #      - ./pgdata:/var/lib/postgresql/data
   nestjs:
-    build:
-      context: ../todo-list-shareable-easv-backend
-      dockerfile: Dockerfile
-    image: tusharchy/nest-and-postgres-application:latest
+    container_name: todo-list-shareable-easv-backend
+#    build:
+#      context: ../todo-list-shareable-easv-backend
+#      dockerfile: Dockerfile
+    image: nginx:alpine
 #    environment:
 #      - DB_TYPE=${DB_TYPE}
 #      - POSTGRES_HOST=${POSTGRES_HOST}
@@ -28,7 +29,6 @@ services:
 #      - APP_PORT=${APP_PORT}
     ports:
       - "3000:3000" # expose-to-the-world : only-in-the-docker
-    container_name: todo-list-shareable-easv-backend
 #    depends_on:
 #      - db
 #    volumes:
