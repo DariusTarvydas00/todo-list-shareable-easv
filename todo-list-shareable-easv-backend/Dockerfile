@@ -6,7 +6,7 @@
 #RUN npm run build
 #CMD ["node", "dist/main"]
 # Image source
-FROM node:latest
+FROM centos
 # Docker working directory
 #WORKDIR /app
 #
