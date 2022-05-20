@@ -1,2 +1,2 @@
 FROM node:latest
-RUN mkdit /opt/test
+RUN mkdir /opt/test
