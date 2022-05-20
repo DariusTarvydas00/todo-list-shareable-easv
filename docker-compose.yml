@@ -11,6 +11,7 @@ services:
 #    volumes:
 #      - ./pgdata:/var/lib/postgresql/data
   nestjs:
+    image: my_image
     container_name: todo-nestjs
     build:
       context: todo-list-shareable-easv-backend
