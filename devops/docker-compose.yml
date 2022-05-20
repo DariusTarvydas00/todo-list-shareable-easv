@@ -27,6 +27,8 @@ services:
 #      - POSTGRES_PORT=${POSTGRES_PORT}
 #      - APP_EXPIRES=${APP_EXPIRES}
 #      - APP_PORT=${APP_PORT}
+    command:
+      - npm run dev
     ports:
       - "3000:3000" # expose-to-the-world : only-in-the-docker
 #    depends_on:
