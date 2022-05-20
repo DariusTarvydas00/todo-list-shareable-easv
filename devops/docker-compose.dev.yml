@@ -1,7 +1,7 @@
 version: '3'
-  services:
-    nestjs:
-      image: node:latest
-      build:
-        context: .
-        dockerfile: Dockerfile
+services:
+  nestjs:
+    image: node:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
