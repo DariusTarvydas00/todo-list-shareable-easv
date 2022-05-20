@@ -12,9 +12,10 @@ services:
 #      - ./pgdata:/var/lib/postgresql/data
   nestjs:
     container_name: todo-list-shareable-easv-backend
-    build:
-      context: ../todo-list-shareable-easv-backend
-      dockerfile: Dockerfile
+#    build:
+#      context: ../todo-list-shareable-easv-backend
+#      dockerfile: Dockerfile
+    image: node:18-alpine
 #    environment:
 #      - DB_TYPE=${DB_TYPE}
 #      - POSTGRES_HOST=${POSTGRES_HOST}
